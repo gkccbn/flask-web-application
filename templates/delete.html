@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="{{ url_for('delete') }}", method = 'POST'>
+    <h1>delete page </h1>
+    <h1> type id you want to delete</h1><br>
+  <input type="text" id="id" name="id"><br>
+  <button type="submit" >delete</button><br><br>
+
+    <a href = "{{ url_for('delete2') }}" >  refresh user table </a><br>
+    <a href = "{{ url_for('logout') }}" >  logout</a><br>
+
+
+</form>
+</body>
+</html>

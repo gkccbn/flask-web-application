@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>update page</h1>
+
+<form action="{{ url_for('update') }}", method = 'POST'>
+
+    <table class="list2">
+    <tr>
+        <th>id</th>
+        <th>userName</th>
+        <th>firstName</th>
+        <th>middleName</th>
+        <th>lastName</th>
+        <th>birthDate</th>
+        <th>email</th>
+        <th>password</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.middleName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.birthDate}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+<br>
+
+  <h1> type to update</h1><br>
+
+  <label for="id">id:</label>
+  <input type="text" id="id" name="id"><br><br>
+
+  <label for="uname">user name:</label>
+  <input type="text" id="uname" name="uname"><br><br>
+
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+
+  <label for="mname">middle name</label>
+  <input type="text" id="mname" name="mname"><br><br>
+
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+
+  <label for="bday">birthdate:</label>
+  <input type="date" id="bday" name="bday"><br><br>
+
+  <label for="email">email:</label>
+  <input type="email" id="email" name="email"><br><br>
+
+  <button type="submit" >update</button>
+    <a href = "{{ url_for('login') }}" > if you have an account click to sign in </a> <br>
+</form>
+
+
+</body>
+</html>

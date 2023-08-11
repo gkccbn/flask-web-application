@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>list page </h1>
+
+
+<form action="{{ url_for('list') }}", method = 'GET'><br>
+<table class="list1">
+    <tr>
+        <th>id</th>
+        <th>userName</th>
+        <th>ipAddress</th>
+        <th>loginDateTime</th>
+    </tr>
+    {% for user in onlineuser %}
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.ipAddress}}</td>
+        <td>{{user.loginDateTime}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+    <br><a href = "{{ url_for('logout') }}" >  logout</a><br>
+
+</form>
+</body>
+</html>
